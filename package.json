@@ -35,7 +35,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://shin101004/github.io/nomflix",
+  "homepage": "https://gallant-kilby-3c8c7c.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
