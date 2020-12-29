@@ -147,7 +147,7 @@ class Tabs extends React.Component {
                     {this.state.active===1 ? 
                     this.props.youtube.map(data=>
                         <Block>
-                            <Iframe url={`http://youtube.com/embed/${data.key}`}
+                            <Iframe url={`https://youtube.com/embed/${data.key}`}
                                 width = "755px"
                                 height = "450px"
                                 padding = "10px"
