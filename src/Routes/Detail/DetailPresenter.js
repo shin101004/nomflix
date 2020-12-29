@@ -77,7 +77,7 @@ const Divider = styled.span`
 
 const Overview = styled.div`
     margin-top : 10px;
-    font-size : 24px;
+    font-size : 20px;
     line-height : 1.5em;
     color : rgba(255,255,255,0.7);
     text-shadow : 2px 2px black;
@@ -148,10 +148,6 @@ const DetailPresenter = ({result,error,loading})=>
                         {result.original_title && result.original_title ? 
                         <IMDB link={result.imdb_id}>IMDB</IMDB> :
                         null
-                        }
-                        {result.belongs_to_collection && result.belongs_to_collection.name ? 
-                        <Button link={result.belongs_to_collection.id}>Collection</Button> : 
-                        (result.seasons ? <Button link={result.seasons}>Seasons</Button> : null) 
                         }
                         </Item>
                     </ItemContainer>

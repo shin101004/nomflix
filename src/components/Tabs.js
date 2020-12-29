@@ -44,7 +44,7 @@ const Content = styled.div`
 
 const Block = styled.div`
     background-color : rgba(0,0,0,0.4);
-    width : 100%;
+    width : 570px;
     padding : 20px;
     border-bottom-left-radius : 5px;
     border-bottom-right-radius : 5px;
@@ -148,7 +148,7 @@ class Tabs extends React.Component {
                     this.props.youtube.map(data=>
                         <Block>
                             <Iframe url={`https://youtube.com/embed/${data.key}`}
-                                width = "755px"
+                                width = "530px"
                                 height = "450px"
                                 padding = "10px"
                                 display = "block"
