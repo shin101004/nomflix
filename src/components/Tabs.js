@@ -14,7 +14,7 @@ const Header = styled.ul`
 `
 
 const Tab = styled.li`
-    padding : 20px 20px;
+    padding : 10px 10px;
     float : left;
     background-color : black;
     font-size : 18px;
@@ -58,7 +58,7 @@ const Block = styled.div`
 
 
 const ProductionImg = styled.div`
-    width : 300px;
+    width : 250px;
     background-image : url('${props=>props.src}');
     background-position : center center;
     background-size : contain;
@@ -147,7 +147,6 @@ class Tabs extends React.Component {
                     {this.state.active===1 ? 
                     this.props.youtube.map(data=>
                         <Block>
-                            
                             <Iframe url={`http://youtube.com/embed/${data.key}`}
                                 width = "755px"
                                 height = "450px"
@@ -161,20 +160,6 @@ class Tabs extends React.Component {
                      : null
                      }
                     {this.state.active===2 ? 
-                        // {this.props.production.map(data=> (
-                        //     data.logo_path!==null ?
-                            
-                        //         {/* <img src={`https://image.tmdb.org/t/p/w300/${data.logo_path}`}>
-                                    
-                        //         </img> */}
-                        //         <BgImg src={`https://image.tmdb.org/t/p/w300/${data.logo_path}`}>
-                        //             <div>{data.name}</div>
-                        //         </BgImg>
-                           
-                        //     : null 
-                        //     ))}
-                        
-                        //      : null
                         (
                             this.props.production.map(data=> (
                                 data.logo_path!==null ? 
