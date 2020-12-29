@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Redirect, Switch} from "react-router-dom";
+import {HashRouter as Router, Route, Redirect, Switch} from "react-router-dom";
 import Home from "../Routes/Home";
 // 자동으로 Home 폴더 내의 Index.js 호출
 import TV from "../Routes/TV";
