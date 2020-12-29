@@ -39,3 +39,7 @@ export const tvApi ={
         }
     })
 }
+
+export const collectionApi = {
+    getCollect : (id)=>api.get(`collection/${id}`)
+}

@@ -1,8 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "../../components/Loader";
+import Tabs from "../../components/Tabs";
 import Star from "../../components/Star";
+import IMDB from "../../components/IMDB";
 import Helmet from "react-helmet";
 
 const Container = styled.div`
@@ -40,6 +43,7 @@ const Cover = styled.div`
     background-position : center center;
     height : 100%;
     border-radius : 5px;
+    margin-right : 50px;
 `;
 
 const Data = styled.div`
@@ -78,8 +82,22 @@ const Overview = styled.div`
     color : rgba(255,255,255,0.7);
     text-shadow : 2px 2px black;
     width : 70%;
+    margin-bottom : 20px;
 `;
 
+const Button = styled.button`
+    background-color : black;
+    border-radius : 5px;
+    border : 2px solid #53bfed;
+    color : white;
+    padding : 10px;
+    font-size : 16px;
+    cursor: pointer;
+`;
+
+const TabsContainer = styled.ul`
+    margin-top : 20px;
+`;
 
 const DetailPresenter = ({result,error,loading})=> 
     loading ? (
@@ -125,13 +143,25 @@ const DetailPresenter = ({result,error,loading})=>
                             <Star rating={result.vote_average}/> &nbsp;
                             {result.vote_average}/10
                         </Item>
+                        <Divider>•</Divider>
                         <Item>
-                            
+                        {result.original_title && result.original_title ? 
+                        <IMDB link={result.imdb_id}>IMDB</IMDB> :
+                        null
+                        }
+                        {result.belongs_to_collection && result.belongs_to_collection.name ? 
+                        <Button link={result.belongs_to_collection.id}>Collection</Button> : 
+                        (result.seasons ? <Button link={result.seasons}>Seasons</Button> : null) 
+                        }
                         </Item>
                     </ItemContainer>
                     <Overview>
                             {result.overview}
                     </Overview>
+                    <Tabs youtube={result.videos.results} 
+                        production={result.production_companies}
+                        countries={result.production_countries}
+                    />
                 </Data>
             </Content>
         </Container>
