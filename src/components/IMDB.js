@@ -14,6 +14,10 @@ const Content = styled.button`
     border : #edd051 1px solid;
     margin-right : 10px;
     cursor : pointer;
+    &:hover {
+        border : 2px solid white;
+        color : rgba(255,255,255,1);
+    }
 `;
 
 class IMDB extends React.Component {
@@ -29,7 +33,7 @@ class IMDB extends React.Component {
     render() {
         return (
         <Content onClick={()=>this.handleClick(this.props.link)}>
-            IBDM
+            IMDB
         </Content>
         )
     }

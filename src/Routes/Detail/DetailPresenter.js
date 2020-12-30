@@ -20,34 +20,37 @@ const Backdrop = styled.div`
     top : 0px;
     left : 0;
     width : 100%;
-    height : 100%;
+    height : 70%;
     background-image : url(${props=>props.bgImage});
-    background-size : cover;
+    background-size : 100% 100%;
     background-position : center center;
-    filter : blur(3px);
+    background-repeat : no-repeat;
+    filter : blur(2px);
     opacity : 0.5;
 `;
 
 const Content = styled.div`
     display : flex;
-    width : 100%; 
+    flex-wrap : wrap;
+    width : 50%; 
     position: relative;
     z-index : 1;  
-    height : 100%;
+    height : 80%;
+    margin : 0 auto;
 `;
 
 const Cover = styled.div`
-    width : 30%;
+    width : 100%;
     background-image : url(${props=>props.bgImage});
-    background-size : cover;
+    background-size : 100% 100%;
     background-position : center center;
     height : 100%;
     border-radius : 5px;
-    margin-right : 50px;
+    margin-bottom : 10px;
 `;
 
 const Data = styled.div`
-    width : 70%;
+    width : 100%;
     margin-left : 10px;
 `;
 
@@ -81,22 +84,8 @@ const Overview = styled.div`
     line-height : 1.5em;
     color : rgba(255,255,255,0.7);
     text-shadow : 2px 2px black;
-    width : 70%;
+    width : 100%;
     margin-bottom : 20px;
-`;
-
-const Button = styled.button`
-    background-color : black;
-    border-radius : 5px;
-    border : 2px solid #53bfed;
-    color : white;
-    padding : 10px;
-    font-size : 16px;
-    cursor: pointer;
-`;
-
-const TabsContainer = styled.ul`
-    margin-top : 20px;
 `;
 
 const DetailPresenter = ({result,error,loading})=> 
@@ -128,15 +117,17 @@ const DetailPresenter = ({result,error,loading})=>
                 />
                 <Data>
                     <Title>{result.original_title ? result.original_title : result.original_name}</Title>
-                    <ItemContainer> 
+                    <> 
                         <Item>
                             {result.genres && result.genres.map(data=>(<Genre>{data.name}</Genre>))}
                         </Item>
                         <Divider>•</Divider>
                         <Item>📆&nbsp;
-                            {result.release_date ? 
+                            {
+                            result.release_date ? 
                             result.release_date.substring(0,4) : 
-                            result.first_air_date.substring(0,4)}
+                            result.first_air_date.substring(0,4)
+                            }
                         </Item>
                         <Divider>•</Divider>
                         <Item>
@@ -146,17 +137,17 @@ const DetailPresenter = ({result,error,loading})=>
                         <Divider>•</Divider>
                         <Item>
                         {result.original_title && result.original_title ? 
-                        <IMDB link={result.imdb_id}>IMDB</IMDB> :
+                        <IMDB link={result.imdb_id}></IMDB> :
                         null
                         }
                         </Item>
-                    </ItemContainer>
+                    </>
                     <Overview>
                             {result.overview}
                     </Overview>
                     <Tabs youtube={result.videos.results} 
                         production={result.production_companies}
-                        countries={result.production_countries}
+                        countries={result.production_countries} 
                     />
                 </Data>
             </Content>

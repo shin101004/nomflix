@@ -10,7 +10,8 @@ const Container = styled.div`
 
 const Header = styled.ul`
     padding : 0;
-    margin : 0;
+    margin-bottom : 20px;
+    width : 100%;
 `
 
 const Tab = styled.li`
@@ -29,36 +30,22 @@ const Tab = styled.li`
     }
 `
 
-// const Nav = styled.h1`
-//     width : 100%;
-//     font-size : 24px;
-//     color : white;
-//     font-weight : 400;
-//     margin-top : 10px;
-//     letter-spacing : 2px;
-// `;
-
 const Content = styled.div`
-    width : 70%;
+    width : 80%;
 `
 
 const Block = styled.div`
     background-color : rgba(0,0,0,0.4);
     width : 570px;
     padding : 20px;
-    border-bottom-left-radius : 5px;
-    border-bottom-right-radius : 5px;
-    border-top-right-radius : 5px;
-    border-left : 1px solid white;
-    border-top : 1px solid white;
+    border-radius : 5px;
+    border : 1px solid white;
     opacity : 0.8;
-    margin-top : 20px;
+    margin : 20px 0;
 `;
 
-
-
 const ProductionImg = styled.div`
-    width : 250px;
+    width : 150px;
     background-image : url('${props=>props.src}');
     background-position : center center;
     background-size : contain;
@@ -68,6 +55,7 @@ const ProductionImg = styled.div`
     position : relative;
     margin-top : 20px;
     margin-right : 20px;
+    margin-bottom : 20px;
     border-radius : 4px;
     &:hover {
         div {
@@ -95,6 +83,7 @@ const ProductionSpan = styled.div`
 `;
 
 const CountryName = styled.div`
+    margin-bottom : 20px;
     span {
     width : 250px;
     height : 30px;
@@ -108,13 +97,6 @@ const CountryName = styled.div`
     align-items : center;
     }
 `
-
-const Err = styled.div`
-    margin-top : 20px;
-    font-size : 16px;
-    color : white;
-
-`;
 
 class Tabs extends React.Component {
     constructor(props) {
@@ -168,7 +150,7 @@ class Tabs extends React.Component {
                                         {data.name}
                                         </ProductionSpan>
                                     </ProductionImg>
-                                : null
+                                : <ProductionImg src="../noPosterSmall.png"/>
                             ))
                         )
 
