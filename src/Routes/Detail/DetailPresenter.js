@@ -40,18 +40,19 @@ const Content = styled.div`
 `;
 
 const Cover = styled.div`
-    width : 100%;
+    width : 70%;
     background-image : url(${props=>props.bgImage});
     background-size : 100% 100%;
     background-position : center center;
-    height : 100%;
+    height : 90%;
     border-radius : 5px;
-    margin-bottom : 10px;
+    margin : 0 auto;
+    margin-top : 150px;
 `;
 
 const Data = styled.div`
     width : 100%;
-    margin-left : 10px;
+    margin-top : 10px;
 `;
 
 const Title = styled.h1`
@@ -136,9 +137,10 @@ const DetailPresenter = ({result,error,loading})=>
                         </Item>
                         <Divider>•</Divider>
                         <Item>
-                        {result.original_title && result.original_title ? 
-                        <IMDB link={result.imdb_id}></IMDB> :
-                        null
+                        {
+                            result.original_title && result.original_title ? 
+                            <IMDB link={result.imdb_id}></IMDB> :
+                            null
                         }
                         </Item>
                     </>
