@@ -4,7 +4,7 @@ import { moviesApi, tvApi } from "../../api.js";
 
 // eslint-disable-next-line 
 export default class extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props);
         const {location : {pathname}} = props;
         this.state = {
