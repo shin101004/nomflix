@@ -3,10 +3,10 @@
 Learning React and ES6 by building a Movie Discovery App.
 
 ## Screens
-- [ ] Home
-- [ ] TV Shows
-- [ ] Search
-- [ ] Detail
+- [X] Home
+- [X] TV Shows
+- [X] Search
+- [?] Detail
 
 ## API Verbs
 
@@ -21,7 +21,7 @@ Learning React and ES6 by building a Movie Discovery App.
 
 ## Code Challenges
 - [X] IMDB Link 'https://imdb.com/title/${id}'
-- [ ] Tabs inside of Movie / Show Details(YouTube Videos, Production Company Logo & Countries) => 요소만 작성
-- [ ] Collections Link => 구성 끝
-- [ ] /Collection Route
-- [ ] On TV Show, show seasons and creators
+- [X] Tabs inside of Movie / Show Details(YouTube Videos, Production Company Logo & Countries) => 요소만 작성
+- [?] Collections Link => 구성 끝
+- [?] /Collection Route
+- [?] On TV Show, show seasons and creators
